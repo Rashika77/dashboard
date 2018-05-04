@@ -1,0 +1,54 @@
+<header class="main-header">
+  <a href="" class="logo">
+    <span class="logo-mini">
+      <img src="../../../assets/img/logo.png" />
+    </span>
+    <span class="logo-lg">
+      <span class="logo-mini-display">
+        <img src="../../../assets/img/logo.png" />
+      </span>
+      <b>Accolite&nbsp;</b>Apps</span>
+  </a>
+  <nav class="navbar navbar-static-top">
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <li>
+          <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+              <input type="text" name="q" class="form-control" placeholder="Search People...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </form>
+        </li>
+        <li class="dropdown user user-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img [src]="userData.image" class="user-image" alt="User Image">
+            <span class="hidden-xs">{{userData.name}}</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="user-header">
+              <img [src]="userData.image" class="img-circle" alt="User Image">
+              <p>
+                {{userData.name}}
+                <small>{{userData.email}}</small>
+              </p>
+            </li>
+            <li class="user-footer">
+              <div class="pull-right">
+                <a href="#" (click)="socialSignOut()" class="btn btn-default btn-flat">Sign out</a>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

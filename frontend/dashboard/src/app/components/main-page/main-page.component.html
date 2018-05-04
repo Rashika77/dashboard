@@ -1,0 +1,127 @@
+<div class="row">
+  <div class="col-md-5ths .col-sm-5ths">
+    <a>
+      <div class="info-box">
+        <span class="info-box-icon bg-aqua">
+          <i class="ion ion-ios-people-outline"></i>
+        </span>
+        <div class="info-box-content">
+          <span class="info-box-number">
+            HRMS
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-md-5ths .col-sm-5ths">
+    <a href="http://localhost:4200">
+      <div class="info-box">
+        <span class="info-box-icon bg-red">
+          <i class="ion ion-ios-help-outline"></i>
+        </span>
+        <div class="info-box-content">
+          <span class="info-box-number">HelpDesk</span>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-md-5ths .col-sm-5ths">
+    <a href="https://apps.accolite.com/signin">
+      <div class="info-box">
+        <span class="info-box-icon bg-purple">
+          <i class="ion ion-ios-link-outline"></i>
+        </span>
+        <div class="info-box-content">
+          <span class="info-box-number">EzHire</span>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-md-5ths .col-sm-5ths">
+    <a href="https://mypayroll.paysquare.com/">
+      <div class="info-box">
+        <span class="info-box-icon bg-yellow">
+          <i class="ion ion-logo-usd"></i>
+        </span>
+        <div class="info-box-content">
+          <span class="info-box-number">PaySquare</span>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-md-5ths .col-sm-5ths">
+    <a href="https://www.peopleworks.ind.in//">
+      <div class="info-box">
+        <span class="info-box-icon bg-yellow">
+          <i class="ion ion-logo-usd"></i>
+        </span>
+        <div class="info-box-content">
+          <span class="info-box-number">PeopleWorks</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8">
+    <div class="box box-success">
+      <div class="box-header with-border">
+        <h3 class="box-title">Events</h3>
+        <div class="box-tools pull-right">
+          <!-- <button type="button" class="btn btn-box-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button> -->
+        </div>
+      </div>
+      <div class="box-body no-padding">
+        <div class="direct-chat-messages">
+          <div class="col-md-12 box-border" *ngFor="let event of events">
+            <div class="box-body">
+              <a [href]="event.link" target="_blank">
+                <img class="img-responsive pad" [src]="event.imageUrl" alt="Photo">
+              </a>
+              <h3>{{event.title}}</h3>
+              <p>{{event.subTitle}}</p>
+            </div>
+            <div class="box-footer">
+              <a [href]="event.link" target="_blank" class="small-box-footer">More info
+                <i class="fa fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="box box-success">
+      <div class="box-header with-border">
+        <h3 class="box-title">Notifications</h3>
+        <div class="box-tools pull-right">
+          <!-- <button type="button" class="btn btn-box-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button> -->
+        </div>
+      </div>
+      <div class="box-body no-padding">
+        <div class="direct-chat-messages">
+          <div class="info-box" *ngFor="let notification of notifications">
+            <div class="info-box-content info-box-content-border-blue">
+              <span class="info-box-text">
+                <b>{{notification.title}}</b>
+                <small class="text-muted pull-right">
+                  <i class="fa fa-clock-o"></i>&nbsp;&nbsp;{{notification.date | date: 'dd/MM/yyyy'}}</small>
+              </span>
+              <span class="new-line">{{notification.subTitle}}</span>
+            </div>
+            <div class="box-footer" *ngIf="notification.link!=''">
+              <a [href]="notification.link" target="_blank" class="small-box-footer">More info
+                <i class="fa fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

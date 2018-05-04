@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="box ">
+      <div class="box-header with-border">
+        <i class="fa fa-cog"></i>
+        <h3 class="box-title">Configure Events</h3>
+        <div class="box-tools pull-right">
+          <!-- <button type="button" class="btn btn-box-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button> -->
+        </div>
+      </div>
+      <div class="box-body">
+        <div class="direct-chat-messages">
+          <div class="col-md-12 box with-border-blue" *ngFor="let event of events">
+            <form>
+              <div class="box-header">
+                <h3 class="box-title">{{event.title}}}</h3>
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                    <i class="fa fa-minus"></i>
+                  </button>
+                  <button type="button" *ngIf="!editable" class="btn btn-box-tool" (click)="switchEditableMode()">
+                    <i class="fa fa-edit"></i>
+                  </button>
+                  <button type="button" class="btn btn-box-tool" (click)="clearInputs()">
+                    <i class="fa fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="box-body">
+                <div class="box-body no-padding">
+                  <div class="col-md-12 box-border">
+                    <div class="box-body">
+                      <a [href]="event.link" target="_blank">
+                        <img class="img-responsive pad" [src]="event.imageUrl" alt="Photo" matTooltip="Click on the image to change it">
+                      </a>
+                      <h3 *ngIf="!editable">{{event.title}}</h3>
+                      <mat-form-field *ngIf="editable" class="full-width">
+                        <input matInput placeholder="Title" [(ngModel)]="event.title">
+                      </mat-form-field>
+
+                      <p *ngIf="!editable">{{event.subTitle}}</p>
+                      <mat-form-field *ngIf="editable" class="full-width">
+                        <input matInput placeholder="Subtitle" [(ngModel)]="event.subTitle">
+                      </mat-form-field>
+
+                    </div>
+                    <div class="box-footer">
+                      <a *ngIf="!editable" [href]="event.link" target="_blank" class="small-box-footer">More info
+                        <i class="fa fa-arrow-circle-right"></i>
+                      </a>
+                      <mat-form-field *ngIf="editable" class="full-width">
+                        <input matInput placeholder="Link" [(ngModel)]="event.link">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary" (click)="saveChanges()" [disabled]="submitting==true ||  statusChanged==true">{{submit}}</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+  </div>
+</div>
